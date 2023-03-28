@@ -22,7 +22,7 @@ b. Os seguintes pares são válidos: [A-B, B-C] o filme B é usado em pares dife
 7. Escolha a solução de autenticação que achar mais interessante. Crie pelo menos dois usuários/jogadores.
  
  
-#Anotações do autor
+# Anotações do autor
 
 
 Na construção desse app foi utilizado a [arquiterura hexagonal](https://medium.com/ssense-tech/hexagonal-architecture-there-are-always-two-sides-to-every-story-bc0780ed7d9c) para demonstração, uma vez que cada dia mais se fala em arquitetura limpa/código limpo. Também foi inserido o conceito de [arquitetura gritante](https://blog.dyegomaas.com.br/posts/artigo-arquitetura-gritante/), que visa criar objetos especializados de modo que fique claro seu objetivo só de ler o nome. 
@@ -48,7 +48,7 @@ Foi implementado uma classe de teste integrado que testar os cenários significa
   
 Devido ao tempo e ao projeto não ser produtivo, não foram realizados testes unitários. Mas isso é uma premissa no dia a dia das squads e validado por ferramentas de devops.
 
-#Demais informações
+# Demais informações
 
 - **host:** http://localhost:8080/
 
@@ -58,9 +58,9 @@ Devido ao tempo e ao projeto não ser produtivo, não foram realizados testes un
 
 - **clase principal de testes:** OrquestracaoQuizServiceTest
 
-#BDD - Desenvolvimento Orientado ao Comportamento
+# BDD - Desenvolvimento Orientado ao Comportamento
 
-#####Cenário 1 - AUTENTICAR USUÁRIO AO CRIAR QUIZ
+##### Cenário 1 - AUTENTICAR USUÁRIO AO CRIAR QUIZ
 
 dado que
  - foi informado um usuário e senha
@@ -74,7 +74,7 @@ então
  - será realizada a liberação continuidade do processo
  - um novo quiz/partida será criado 
 
-#####Cenário 2 - AUTENTICAR USUÁRIO NAS DEMAIS ROTAS
+##### Cenário 2 - AUTENTICAR USUÁRIO NAS DEMAIS ROTAS
 
 dado que
  - foi informado um usuário e senha
@@ -87,7 +87,7 @@ então
  - será verifiado se o quiz informado pertence ao usuário informado
  - será realizada a liberação continuidade do processo
  
-#####Cenário 3 - INICIAR NOVO QUIZ/PARTIDA 
+##### Cenário 3 - INICIAR NOVO QUIZ/PARTIDA 
 
 dado que
  - não há quiz/partida em andamento para aquele usuário
@@ -99,7 +99,7 @@ então
  - um novo quiz/partida será criado com 25 rodadas (50 filmes adicionados na base) respeitando os requisitos da sessão 2
  - os dados serão persistidos na base
  
-#####Cenário 4 - SOLICITAR NOVA RODADA quando HOUVER RODADAS PENDENTES
+##### Cenário 4 - SOLICITAR NOVA RODADA quando HOUVER RODADAS PENDENTES
 
 dado que
  - o quiz/partida está 'em andamento'
@@ -111,7 +111,7 @@ quando
 então
  - será retornada a rodada pendente de acordo com a ordenação no banco de dados
  
-#####Cenário 5 - SOLICITAR NOVA RODADA quando NÃO HOUVER RODADAS PENDENTES
+##### Cenário 5 - SOLICITAR NOVA RODADA quando NÃO HOUVER RODADAS PENDENTES
 
 dado que
  - o quiz/partida está 'em andamento'
@@ -123,7 +123,7 @@ quando
 então
  - será verificado se há rodadas a serem respondidas, se não, será solicitado o encerramento do quiz/partida
  
-#####Cenário 6 - RESPONDER UMA RODADA CORRETAMENTE
+##### Cenário 6 - RESPONDER UMA RODADA CORRETAMENTE
 
 dado que
  - o quiz/partida está 'em andamento'
@@ -136,7 +136,7 @@ então
  - será somado 1 ponto ao quiz/partida
  - a rodada será atualizada com a resposta 1 - RESPOSTA_CORRETA
   
-#####Cenário 7 - RESPONDER UMA RODADA INCORRETAMENTE
+##### Cenário 7 - RESPONDER UMA RODADA INCORRETAMENTE
 
 dado que
  - o quiz/partida está 'em andamento'
@@ -149,7 +149,7 @@ então
  - a rodada será atualizada com a resposta 1 - RESPOSTA_INCORRETA
  - será verificado a quantidade de erros relacionado ao quiz/partida. Se a quantidade de erro for => a 3, será solicitado o encerramento do quiz/partida
  
-#####Cenário 8 - ENCERRAR QUIZ/PARTIDA
+##### Cenário 8 - ENCERRAR QUIZ/PARTIDA
 
 dado que
  - o quiz/partida está 'em andamento'
@@ -161,7 +161,7 @@ então
  - se houver rodadas pendentes de resposta, elas serão atualizadas para resposta 4 - 'ENCERRADA_SEM_RESPOSTA')
  - a situação do quiz/partida será atualizado para 'ENCERRADO'
  
-#####Cenário 9 - SOLICITAR RANKING
+##### Cenário 9 - SOLICITAR RANKING
 
 dado que
  - existem quizzes concluidos 

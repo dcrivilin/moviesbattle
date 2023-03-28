@@ -38,7 +38,7 @@ Devido ao tempo de desenvolvimento, existem alguns TODOS e melhorias a serem imp
 - criação de exception mais estruturadas;
 - criação interface no adapter.in para que a classe controller fique mais limpo (menos anotations);
 
-#Teste
+# Teste
 
 Foi implementado uma classe de teste integrado que testar os cenários significativos. 
 
